@@ -13,7 +13,7 @@ void init(void)
     //init_uart1();
 
     GPIO_Init(LED_PORT, LED_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
-
+    GPIO_Init(BTN_PORT, BTN_PIN, GPIO_MODE_IN_PU_NO_IT);
 }
 
 
@@ -21,13 +21,18 @@ int main(void)
 {
   
     uint32_t time = 0;
-
+    uint8_t memory=0;
     init();
 
     while (1) {
         if (milis() - time > 333 ) {
-            REVERSE(LED); 
             time = milis();
+            if(PUSH(BTN)==1 && memory==0){
+                REVERSE(LED); 
+            }
+            memory=PUSH(BTN);
+            
+            
             //printf("%ld\n", time);
         }
         //delay_ms(333);
