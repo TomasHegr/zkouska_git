@@ -27,7 +27,7 @@ int main(void)
     while (1) {
         if (milis() - time > 333 ) {
             time = milis();
-            if(PUSH(BTN)==1 && memory==0){
+            if(PUSH(BTN)==1 && memory==0){  //rozvsícení led tlačítkem
                 REVERSE(LED); 
             }
             memory=PUSH(BTN);
