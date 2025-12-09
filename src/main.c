@@ -15,7 +15,12 @@ void init(void)
     GPIO_Init(LED_PORT, LED_PIN, GPIO_MODE_OUT_PP_LOW_SLOW);
     GPIO_Init(BTN_PORT, BTN_PIN, GPIO_MODE_IN_PU_NO_IT);
 }
+/*
 
+
+připojení ve škole
+
+*/
 
 int main(void)
 {
